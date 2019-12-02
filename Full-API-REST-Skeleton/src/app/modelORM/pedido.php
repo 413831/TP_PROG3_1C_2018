@@ -6,10 +6,11 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 
 class pedido extends \Illuminate\Database\Eloquent\Model {
-  protected $estadoPedido;
+  protected $codigo;
   protected $tiempo;
   protected $mesa;
   protected $cliente;
   protected $encargado;
-
+  protected $imagen;
+  protected $estadoPedido;
 }

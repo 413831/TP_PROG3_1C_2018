@@ -7,18 +7,18 @@ use App\Models\ORM\producto;
 use App\Models\ORM\usuario;
 use App\Models\ORM\pedido;
 use App\Models\ORM\mesa;
-use App\Models\ORM\usuarioController;
-use App\Models\ORM\productoController;
-use App\Models\ORM\pedidoController;
+use App\Models\PDO\usuarioController;
+use App\Models\PDO\productoController;
+use App\Models\PDO\pedidoController;
 
 include_once __DIR__ . '/../../src/app/modelORM/usuario.php';
 include_once __DIR__ . '/../../src/app/modelORM/producto.php';
 include_once __DIR__ . '/../../src/app/modelORM/pedido.php';
 include_once __DIR__ . '/../../src/app/modelORM/mesa.php';
 include_once __DIR__ . '/../../src/app/modelORM/producto.php';
-include_once __DIR__ . '/../../src/app/modelORM/usuarioController.php';
-include_once __DIR__ . '/../../src/app/modelORM/pedidoController.php';
-include_once __DIR__ . '/../../src/app/modelORM/productoController.php';
+include_once __DIR__ . '/../../src/app/modelPDO/usuarioController.php';
+include_once __DIR__ . '/../../src/app/modelPDO/pedidoController.php';
+include_once __DIR__ . '/../../src/app/modelPDO/productoController.php';
 
 return function (App $app) {
     $container = $app->getContainer();

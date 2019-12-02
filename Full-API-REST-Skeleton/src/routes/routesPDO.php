@@ -3,36 +3,23 @@
 use Slim\App;
 use Slim\Http\Request;
 use Slim\Http\Response;
-use App\Models\PDO\cd;
-use App\Models\PDO\cdControler;
+use App\Models\PDO\AccesoDatos;
+use App\Models\PDO\MainController;
 
-
-
-include_once __DIR__ . '/../../src/app/modelPDO/cdControler.php';
-include_once __DIR__ . '/../../src/app/modelPDO/cd.php';
-
-
+include_once __DIR__ . '/../../src/app/modelPDO/AccesoDatos.php';
+include_once __DIR__ . '/../../src/app/modelPDO/MainController.php';
 
 return function (App $app) {
-    $container = $app->getContainer();  
+    $container = $app->getContainer();
 
-    
-    $app->group('/cdPDO', function () {   
+    $app->group('/PDO', function () {
 
-       $this->get('/', function ($request, $response, $args) {
-
-            return  json_encode(cd::TraerTodoLosCds());
-            $todosLosCds=cd::TraerTodoLosCds();
-            $newResponse = $response->withJson($todosLosCds, 200);  
-            return $newResponse;
-        });
-
+        $this->get('/',MainController::class.':ListarPedidos');
+        $this->get('/{id}',MainController::class.':ListarPendientes');
+        $this->post('/{pedido}',MainController::class.':DetallePedido');
+        $this->put('/',MainController::class.':CerrarPendiente');
+        $this->put('/{mesa}',MainController::class.':CobrarMesa');
     });
-   
-    $app->group('/cdPDO2', function () {   
 
-        $this->get('/',cdControler::class . ':TraerTodos');   
-
-    });
 
 };

@@ -9,5 +9,6 @@ class producto extends \Illuminate\Database\Eloquent\Model {
   protected $descripcion;
   protected $precio;
   protected $tipo;
+  protected $estado;
 
 }

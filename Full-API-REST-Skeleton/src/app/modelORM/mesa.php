@@ -6,6 +6,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 
 class mesa extends \Illuminate\Database\Eloquent\Model {
-
+  protected $codigoMesa;
+  protected $estado;
 
 }
